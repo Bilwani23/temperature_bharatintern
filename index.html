@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            background-color: #ffc107;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 1em;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 12px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <label for="celsius">Enter Temperature in Celsius:</label>
+    <input type="number" id="celsius">
+    <button onclick="convertTemperature()">Convert to Fahrenheit</button>
+
+    <div id="result"></div>
+
+    <script>
+        function convertTemperature() {
+            // Get the Celsius temperature from the input
+            var celsius = document.getElementById("celsius").value;
+
+            // Check if the input is a valid number
+            if (isNaN(celsius)) {
+                alert("Please enter a valid number for Celsius temperature.");
+                return;
+            }
+
+            // Convert Celsius to Fahrenheit
+            var fahrenheit = (celsius * 9/5) + 32;
+
+            // Display the result
+            var resultElement = document.getElementById("result");
+            resultElement.textContent = "Result: " + fahrenheit.toFixed(2) + " Fahrenheit";
+        }
+    </script>
+</body>
+</html>
